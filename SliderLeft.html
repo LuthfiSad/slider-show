@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html::-webkit-scrollbar {
+        width: 0;
+      }
+      .destination .hero-slider {
+        background-image: url("https://cdn.goturkiye.com/goturkiye/bg-1.jpg");
+        border-top-left-radius: 100px;
+        border-bottom-left-radius: 100px;
+      }
+      .destination .hero-slider::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: linear-gradient(
+          262deg,
+          rgba(0, 0, 0, 1) 25%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        pointer-events: none;
+      }
+      .destination .hero-slider::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        background-color: rgba(0, 0, 0, 0.25);
+      }
+      .destination .hero-slider.slider-ready {
+        margin-left: 0 !important;
+        border-radius: 0 !important;
+      }
+      .destination .hero-slider.slider-ready .caption-slider {
+        opacity: 0;
+        z-index: 0;
+      }
+      .destination .slider-ready .header-slider {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      .destination .slider-ready .slider {
+        left: 0;
+      }
+      .destination .slider-container .btn-slider {
+        top: 0;
+        width: 3.5rem;
+        color: #fff;
+        font-weight: 800;
+        font-size: 1.8rem;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        height: 100%;
+        z-index: 30;
+        position: absolute;
+      }
+      .destination .slick-disabled {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="destination bg-black flex py-10 justify-center overflow-hidden items-center"
+    >
+      <div
+        class="relative h-full w-full bg-fixed bg-cover bg-bottom transition-all ease-in-out duration-500 ms-8 sm:ms-16 hero-slider"
+      >
+        <div
+          class="w-[45%] ps-6 lg:ps-16 delay-100 duration-700 z-30 absolute h-full caption-slider flex flex-col justify-center"
+        >
+          <div>
+            <h1 class="text-2xl md:text-4xl lg:text-5xl text-white font-bold">
+              All Destination
+            </h1>
+            <button
+              class="text-[10px] md:text-sm lg:text-base text-white border border-white py-2 px-4 rounded mt-4 hover:bg-white hover:text-black"
+            >
+              See All
+            </button>
+          </div>
+        </div>
+        <div
+          class="opacity-0 transform translate-x-30 transition-all ease-in-out duration-500 delay-100 absolute top-3 z-20 header-slider"
+        >
+          <h1 class="text-xl text-white font-bold px-12">All Destination</h1>
+        </div>
+        <div
+          class="my-14 max-h-[400px] slider-container select-none z-20 relative"
+        >
+          <button class="btn-slider left-0 close-slider">
+            <i class="bi bi-chevron-left"></i>
+          </button>
+          <div
+            class="absolute w-screen slider duration-700 delay-200 left-[40%] h-full"
+          >
+            <button
+              data-current-slide="0"
+              class="btn-slider left-0 slick-prev slick-disabled"
+            >
+              <i class="bi bi-chevron-left"></i>
+            </button>
+            <div
+              class="slider-list mx-[63px] duration-700 absolute left-0 h-full w-full"
+            >
+              <div
+                class="flex items-stretch gap-3 min-w-max absolute left-0 h-full slider-track"
+              >
+                <div class="card-slider">
+                  <div
+                    class="bg-white h-full rounded-[50px] cursor-pointer overflow-hidden relative"
+                  >
+                    <img
+                      class="w-full h-full object-cover"
+                      src="https://cdn.goturkiye.com/goturkiye/bg-1.jpg"
+                      alt=""
+                    />
+                    <div class="absolute bottom-5 left-6 right-6">
+                      <p class="sm:text-xl text-white font-bold">
+                        New York New York New York1
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-slider">
+                  <div
+                    class="bg-white h-full rounded-[50px] cursor-pointer overflow-hidden relative"
+                  >
+                    <img
+                      class="w-full h-full object-cover"
+                      src="https://cdn.goturkiye.com/goturkiye/bg-1.jpg"
+                      alt=""
+                    />
+                    <div class="absolute bottom-5 left-6 right-6">
+                      <p class="sm:text-xl text-white font-bold">
+                        New York New York New York1
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-slider">
+                  <div
+                    class="bg-white h-full rounded-[50px] cursor-pointer overflow-hidden relative"
+                  >
+                    <img
+                      class="w-full h-full object-cover"
+                      src="https://cdn.goturkiye.com/goturkiye/bg-1.jpg"
+                      alt=""
+                    />
+                    <div class="absolute bottom-5 left-6 right-6">
+                      <p class="sm:text-xl text-white font-bold">
+                        New York New York New York1
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-slider">
+                  <div
+                    class="bg-white h-full rounded-[50px] cursor-pointer overflow-hidden relative"
+                  >
+                    <img
+                      class="w-full h-full object-cover"
+                      src="https://cdn.goturkiye.com/goturkiye/bg-1.jpg"
+                      alt=""
+                    />
+                    <div class="absolute bottom-5 left-6 right-6">
+                      <p class="sm:text-xl text-white font-bold">
+                        New York New York New York1
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-slider">
+                  <div
+                    class="bg-white h-full rounded-[50px] cursor-pointer overflow-hidden relative"
+                  >
+                    <img
+                      class="w-full h-full object-cover"
+                      src="https://cdn.goturkiye.com/goturkiye/bg-1.jpg"
+                      alt=""
+                    />
+                    <div class="absolute bottom-5 left-6 right-6">
+                      <p class="sm:text-xl text-white font-bold">
+                        New York New York New York1
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-slider">
+                  <div
+                    class="bg-white h-full rounded-[50px] cursor-pointer overflow-hidden relative"
+                  >
+                    <img
+                      class="w-full h-full object-cover"
+                      src="https://cdn.goturkiye.com/goturkiye/bg-1.jpg"
+                      alt=""
+                    />
+                    <div class="absolute bottom-5 left-6 right-6">
+                      <p class="sm:text-xl text-white font-bold">
+                        New York New York New York1
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-slider">
+                  <div
+                    class="bg-white h-full rounded-[50px] cursor-pointer overflow-hidden relative"
+                  >
+                    <img
+                      class="w-full h-full object-cover"
+                      src="https://cdn.goturkiye.com/goturkiye/bg-1.jpg"
+                      alt=""
+                    />
+                    <div class="absolute bottom-5 left-6 right-6">
+                      <p class="sm:text-xl text-white font-bold">
+                        New York New York New York1
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button
+              data-current-slide="0"
+              class="btn-slider right-0 slick-next"
+            >
+              <i class="bi bi-chevron-right"></i>
+            </button>
+          </div>
+          <button class="btn-slider right-0 trigger-slider">
+            <i class="bi bi-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    // banyak card dan gap pada card
+    let viewCard = 5;
+    let widthCard = 0;
+    let scrollAmount = 0;
+    let dataCurrentSlide = 0;
+    let indexSlide = 0;
+    const sliderTrack = document.querySelector(".destination .slider-track");
+    const gapSliderTrack = parseFloat(getComputedStyle(sliderTrack).gap);
+
+    const sliderContainer = document.querySelector(
+      ".destination .slider-container"
+    );
+    const sliderList = document.querySelector(".destination .slider-list");
+    const nextButton = document.querySelector(".destination .slick-next");
+    const prevButton = document.querySelector(".destination .slick-prev");
+    const closeSlider = document.querySelector(".destination .close-slider");
+    const triggerSlider = document.querySelector(
+      ".destination .trigger-slider"
+    );
+    const cardSliders = document.querySelectorAll(".destination .card-slider");
+    const cardSlidersFirst = document.querySelector(
+      ".destination .card-slider"
+    );
+    const lengthListSlider = document.querySelectorAll(
+      ".destination .slider-track > div"
+    ).length;
+    closeSlider.remove();
+    nextButton.setAttribute("data-current-slide", dataCurrentSlide);
+    prevButton.setAttribute("data-current-slide", dataCurrentSlide);
+
+    cardResponsive();
+    addEventListener("resize", cardResponsive);
+
+    function cardResponsive() {
+      let paddingCard = 0;
+      const widthScreen = window.innerWidth;
+      const styleSliderList = getComputedStyle(sliderList);
+      const marginLeftSliderList = parseFloat(styleSliderList.marginLeft);
+      const marginRightSliderList = parseFloat(styleSliderList.marginRight);
+
+      if (widthScreen >= 1280) {
+        viewCard = 5;
+      } else if (widthScreen >= 1024) {
+        viewCard = 4;
+      } else if (widthScreen >= 768) {
+        viewCard = 3;
+      } else if (widthScreen >= 640) {
+        viewCard = 2;
+      } else {
+        viewCard = 1;
+        paddingCard =
+          (widthScreen - 270 - marginRightSliderList - marginLeftSliderList) /
+          2;
+      }
+      const widthSliderList =
+        widthScreen - (marginLeftSliderList + marginRightSliderList);
+      // width
+      cardSliders.forEach((cardSlider) => {
+        cardSlider.style.width = `${
+          widthSliderList / viewCard -
+          (gapSliderTrack - gapSliderTrack / viewCard)
+        }px`;
+        if (paddingCard >= 0) {
+          cardSlider.style.paddingInline = `${paddingCard}px`;
+        } else {
+          cardSlider.style.paddingInline = `0px`;
+        }
+      });
+      widthCard = cardSlidersFirst.clientWidth;
+      // height
+      sliderContainer.style.height = `${widthCard + 80}px`;
+      scrollAmount = widthCard * viewCard + gapSliderTrack * viewCard;
+      dataCurrentSlide = viewCard * indexSlide;
+      if (dataCurrentSlide >= lengthListSlider) {
+        indexSlide = Math.ceil(lengthListSlider / viewCard - 1);
+        dataCurrentSlide = viewCard * indexSlide;
+      }
+      if (dataCurrentSlide == 0) {
+        prevButton.classList.add("slick-disabled");
+        const heroSlider = document.querySelector(".destination .hero-slider");
+        if(heroSlider.classList.contains("slider-ready")){
+          sliderContainer.prepend(closeSlider);
+        }
+      }
+      nextButton.setAttribute("data-current-slide", dataCurrentSlide);
+      prevButton.setAttribute("data-current-slide", dataCurrentSlide);
+      sliderList.style.transform = `translateX(-${
+        indexSlide * scrollAmount
+      }px)`;
+    }
+
+    triggerSlider.addEventListener("click", () => {
+      triggerSlider.remove();
+      sliderContainer.prepend(closeSlider);
+      document
+        .querySelector(".destination .hero-slider")
+        .classList.add("slider-ready");
+    });
+
+    closeSlider.addEventListener("click", () => {
+      closeSlider.remove();
+      sliderContainer.appendChild(triggerSlider);
+      document
+        .querySelector(".destination .hero-slider")
+        .classList.remove("slider-ready");
+    });
+
+    prevButton.addEventListener("click", () => {
+      dataCurrentSlide -= viewCard;
+      if (dataCurrentSlide < 0) {
+        dataCurrentSlide = 0;
+        return;
+      }
+      if (dataCurrentSlide == 0) {
+        prevButton.classList.add("slick-disabled");
+        sliderContainer.prepend(closeSlider);
+      }
+      indexSlide--;
+      sliderList.style.transform = `translateX(-${
+        indexSlide * scrollAmount
+      }px)`;
+      nextButton.setAttribute("data-current-slide", dataCurrentSlide);
+      prevButton.setAttribute("data-current-slide", dataCurrentSlide);
+    });
+
+    nextButton.addEventListener("click", () => {
+      dataCurrentSlide += viewCard;
+      if (lengthListSlider <= dataCurrentSlide) {
+        dataCurrentSlide -= viewCard;
+        return;
+      }
+      if (dataCurrentSlide == viewCard) {
+        prevButton.classList.remove("slick-disabled");
+        closeSlider.remove();
+      }
+      indexSlide++;
+      sliderList.style.transform = `translateX(-${
+        indexSlide * scrollAmount
+      }px)`;
+      nextButton.setAttribute("data-current-slide", dataCurrentSlide);
+      prevButton.setAttribute("data-current-slide", dataCurrentSlide);
+    });
+  </script>
+</html>
